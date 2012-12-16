@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config>
+
+	<modules>
+		<SotaStudio_CategoryAds>
+			<version>0.1.0</version>
+		</SotaStudio_CategoryAds>
+	</modules>
+
+	<global>
+		<resources>
+
+			<categoryads_setup>
+				<setup>
+					<module>SotaStudio_CategoryAds</module>
+					<class>Mage_Eav_Model_Entity_Setup</class>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</categoryads_setup>
+
+			<categoryads_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</categoryads_write>
+
+			<categoryads_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</categoryads_read>
+
+		</resources>
+	</global>
+</config>
