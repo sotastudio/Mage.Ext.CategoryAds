@@ -4,6 +4,9 @@
 		<SotaStudio_CategoryAds>
 			<active>true</active>
 			<codePool>community</codePool>
+			<depends>
+				<SotaStudio_HelperCollection />
+			</depends>
 		</SotaStudio_CategoryAds>
 	</modules>
 </config>

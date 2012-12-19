@@ -1,0 +1,27 @@
+<?php
+$_helper    	= $this->helper('catalog/output');
+$_category  	= $this->getCurrentCategory();
+$_helperContent = $this->helper('helper_collection/content');
+$_helperArray	= $this->helper('helper_collection/array');
+list($adImage, $adUrl, $adUrltarget, $adTitletext, $adAlttext, $imgW) = array(
+	$_helper->categoryAttribute($_category, $_category->getCategoryAdImage(), 'category_ad_image'),
+	$_helper->categoryAttribute($_category, $_category->getCategoryAdUrl(), 'category_ad_url'),
+	$_category->getResource()->getAttribute('category_ad_urltarget')->getFrontend()->getValue($_category),
+	$_helper->categoryAttribute($_category, $_category->getCategoryAdTitletext(), 'category_ad_titletext'),
+	$_helper->categoryAttribute($_category, $_category->getCategoryAdAlttext(), 'category_ad_alttext'),
+	'475px'
+);
+if ($adUrltarget != '_self' && $adUrltarget != '_blank') $adUrltarget = '_self';
+?>
+<?php if ($adImage): ?>
+	<?php
+	$adImage = Mage::getBaseUrl('media').DS.'catalog'.DS.'category'.DS . $adImage;
+	$adImageUrl = sprintf('<img src="%s" alt="%s" title="%s" width="%s" />', $adImage, $this->htmlEscape($adAlttext), $this->htmlEscape($adTitletext), $imgW);
+	if ($adUrl && stristr($adUrl, 'http')) {
+		$adUrlHtml = sprintf('<a href="%s" target="%s">|</a>', $adUrl, $adUrltarget);
+		$adImageUrl = $_helperContent->wrap($adImageUrl, $adUrlHtml);
+	}
+	$adHtml = $_helperContent->wrap($adImageUrl, '<div class="category-ad-image">|</div>');
+	?>
+	<?php echo $adHtml; ?>
+<?php endif; ?>

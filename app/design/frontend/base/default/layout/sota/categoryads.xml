@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<layout version="0.2.0">
+
+	<catalog_category_default>
+		<reference name="category.products">
+			<block type="catalog/category_view" name="category.categoryads" as="category_ads" template="catalog/category/ads.phtml" before="product_list"/>
+		</reference>
+	</catalog_category_default>
+
+	<catalog_category_layered>
+		<reference name="category.products">
+			<block type="catalog/category_view" name="category.categoryads" as="category_ads" template="catalog/category/ads.phtml" before="product_list"/>
+		</reference>
+	</catalog_category_layered>
+
+</layout>

@@ -3,13 +3,22 @@
 
 	<modules>
 		<SotaStudio_CategoryAds>
-			<version>0.1.0</version>
+			<version>1.0.0</version>
 		</SotaStudio_CategoryAds>
 	</modules>
 
+	<frontend>
+		<layout>
+			<updates>
+				<sota_categoryads>
+					<file>sota/categoryads.xml</file>
+				</sota_categoryads>
+			</updates>
+		</layout>
+	</frontend>
+
 	<global>
 		<resources>
-
 			<categoryads_setup>
 				<setup>
 					<module>SotaStudio_CategoryAds</module>
@@ -31,7 +40,7 @@
 					<use>core_read</use>
 				</connection>
 			</categoryads_read>
-
 		</resources>
 	</global>
+
 </config>
