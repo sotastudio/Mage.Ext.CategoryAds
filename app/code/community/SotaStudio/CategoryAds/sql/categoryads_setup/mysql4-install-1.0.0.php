@@ -41,12 +41,6 @@ $defaultAttributeConfig = array(
  * Attribute definitions
  */
 
-$installer->removeAttribute($catalogEntityTypeId, 'category_ad_image');
-$installer->removeAttribute($catalogEntityTypeId, 'category_ad_url');
-$installer->removeAttribute($catalogEntityTypeId, 'category_ad_urltarget');
-$installer->removeAttribute($catalogEntityTypeId, 'category_ad_titletext');
-$installer->removeAttribute($catalogEntityTypeId, 'category_ad_alttext');
-
 $installer->addAttribute(
 	$catalogEntityTypeId,
 	'category_ad_image',
